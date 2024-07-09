@@ -1,0 +1,11 @@
+{
+  "name": "edge-font-cache-issue",
+  "scripts": {
+    "start": "node index.js",
+    "prepare": "cp node_modules/font-awesome/fonts/fontawesome-webfont.woff static/"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "font-awesome": "^4.7.0"
+  }
+}
