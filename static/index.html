@@ -12,11 +12,11 @@
         display: none;
       }
     </style>
-    <link rel="stylesheet" href="font.css" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
     <script>
       setTimeout(() => {
         document.querySelector(".hidden").classList.remove("hidden");
-        document.querySelector("#heart").classList.add("font-class");
+        document.querySelector("#heart").classList.add("fa", "fa-heart");
       }, 5000);
       if (window.localStorage.getItem("logged-in") !== "true") {
         window.location.href = "/login.html";
@@ -26,7 +26,7 @@
   <body>
     <h1>Wait for it...</h1>
     <div class="hidden">
-      <div id="heart">&#xf004;</div>
+      <i id="heart"></i>
       <a href="login.html">Click here and close browser</a>
     </div>
   </body>
