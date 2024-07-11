@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script>
-      window.localStorage.setItem("logged-in", "true");
-    </script>
-  </head>
   <body>
-    <a href="index.html">Click here</a>
+    <button
+      onclick="
+        window.localStorage.setItem('logged-in', 'true');
+        window.location.href = '/index.html';
+      "
+    >
+      Click here
+    </button>
   </body>
 </html>

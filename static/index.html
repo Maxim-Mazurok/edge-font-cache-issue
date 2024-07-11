@@ -4,7 +4,7 @@
     <style>
       @font-face {
         font-family: "ILoveEdge";
-        src: url("fontawesome-webfont.woff2")
+        src: url("fontawesome-webfont.woff2");
       }
     </style>
   </head>
@@ -12,15 +12,18 @@
     <h1>Wait for it... (300ms)</h1>
     <div style="display: none">
       <h1>
-        Icon should be here in quotes: "<span style="font-family: 'ILoveEdge'"></span> &#xf004; </span>"
+        Icon should be here in quotes: "<span style="font-family: 'ILoveEdge'">
+          &#xf004; </span
+        >"
       </h1>
-      <a
+      <button
         onclick="
           window.localStorage.removeItem('logged-in');
           window.location.href = '/login.html';
         "
-        >Click here and close browser</a
       >
+        Click here and close browser
+      </button>
     </div>
     <script>
       setTimeout(() => {
