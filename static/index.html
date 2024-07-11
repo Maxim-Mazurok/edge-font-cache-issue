@@ -7,6 +7,16 @@
         src: url("fontawesome-webfont.woff2");
       }
     </style>
+    <script>
+      setTimeout(() => {
+        document.querySelector(`[style="display: none"]`).style.display =
+          "block";
+
+        if (window.localStorage.getItem("logged-in") !== "true") {
+          window.location.href = "/login.html";
+        }
+      }, 300);
+    </script>
   </head>
   <body>
     <h1>Wait for it... (300ms)</h1>
@@ -25,15 +35,5 @@
         Click here and close browser
       </button>
     </div>
-    <script>
-      setTimeout(() => {
-        document.querySelector(`[style="display: none"]`).style.display =
-          "block";
-
-        if (window.localStorage.getItem("logged-in") !== "true") {
-          window.location.href = "/login.html";
-        }
-      }, 300);
-    </script>
   </body>
 </html>
