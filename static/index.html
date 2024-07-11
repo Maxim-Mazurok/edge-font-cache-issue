@@ -15,11 +15,15 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
     <script>
       setTimeout(() => {
-        document.querySelector(".hidden").classList.remove("hidden");
+        const unhide = () =>
+          document.querySelector(".hidden").classList.remove("hidden");
         document.querySelector("#heart").classList.add("fa", "fa-heart");
 
         if (window.localStorage.getItem("logged-in") !== "true") {
           window.location.href = "/login.html";
+          setTimeout(unhide, 50);
+        } else {
+          unhide();
         }
       }, 300);
     </script>
