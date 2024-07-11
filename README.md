@@ -21,4 +21,4 @@ One can see in DevTools when doing soft-reload that the font-awesome CSS is load
 1. `nvm i`
 1. `npm ci`
 1. `npm start`
-1. Follow the prompts
+1. Follow the prompts (you can use [MacroRecorder](https://www.macrorecorder.com/download/) with [repro file](./Repro.mrf) to automate the steps)
