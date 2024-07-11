@@ -2,7 +2,7 @@
   "name": "edge-font-cache-issue",
   "scripts": {
     "start": "node index.js",
-    "prepare": "cp -r node_modules/font-awesome static"
+    "prepare": "cp -r node_modules/font-awesome/fonts/fontawesome-webfont.woff2 static"
   },
   "dependencies": {
     "express": "^4.19.2",

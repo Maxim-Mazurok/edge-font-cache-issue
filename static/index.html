@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <style>
-      .font-class {
+      @font-face {
         font-family: "ILoveEdge";
-      }
-      .hidden {
-        display: none;
+        src: url("fontawesome-webfont.woff2")
       }
     </style>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+  </head>
+  <body>
+    <h1>Wait for it... (300ms)</h1>
+    <div style="display: none">
+      <h1>
+        Icon should be here in quotes: "<span style="font-family: 'ILoveEdge'"></span> &#xf004; </span>"
+      </h1>
+      <a
+        onclick="
+          window.localStorage.removeItem('logged-in');
+          window.location.href = '/login.html';
+        "
+        >Click here and close browser</a
+      >
+    </div>
     <script>
       setTimeout(() => {
-        document.querySelector(".hidden").classList.remove("hidden");
-        document.querySelector("#heart").classList.add("fa", "fa-heart");
+        document.querySelector(`[style="display: none"]`).style.display =
+          "block";
 
         if (window.localStorage.getItem("logged-in") !== "true") {
           window.location.href = "/login.html";
         }
       }, 300);
     </script>
-  </head>
-  <body>
-    <h1>Wait for it...</h1>
-    <div class="hidden">
-      <i id="heart"></i>
-      <a href="login.html">Click here and close browser</a>
-    </div>
   </body>
 </html>
