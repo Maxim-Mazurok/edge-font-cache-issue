@@ -21,7 +21,7 @@
 
         if (window.localStorage.getItem("logged-in") !== "true") {
           window.location.href = "/login.html";
-          setTimeout(unhide, 50);
+          setTimeout(unhide, 0);
         } else {
           unhide();
         }
