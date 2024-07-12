@@ -18,7 +18,7 @@
         document.querySelector(".hidden").classList.remove("hidden");
 
       window.onbeforeunload = () => {
-        unhide();
+        setTimeout(unhide, 100);
       };
 
       setTimeout(() => {
