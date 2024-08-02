@@ -1,25 +1,26 @@
 # Edge Font Cache Issue
 
-WIP attempt to create minimal reproducible example for the Edge font cache issue.
+A minimal reproducible example for the Chrome/Edge font cache issue.
 
 ## Steps to reproduce (minimal):
 
-1. `git clone https://github.com/Maxim-Mazurok/edge-font-cache-issue`
-1. `cd edge-font-cache-issue`
+Setup:
+
+1. `git clone https://github.com/Maxim-Mazurok/font-cache-issue`
+1. `cd font-cache-issue`
 1. `nvm i` (optional, but recommended)
 1. `npm ci`
 1. `npm start`
-1. Open Edge
-1. Go to [edge://settings/clearBrowserData](edge://settings/clearBrowserData)
-1. Select "All time" as the time range
-1. Make sure "Cookies and other site data" and "Cached images and files" are checked
-1. Click "Clear now"
-1. Open new tab
+
+Reproduction:
+
+1. Open Chrome or Edge
+1. Open Incognito window (Ctrl+Shift+N) (alternatively, clear all cache)
 1. Go to [http://localhost:3005/](http://localhost:3005/)
 1. Wait to be redirected to `/login.html`
-1. Click on "Click here" link
-1. Wait for "Click here and close browser" link to appear
-1. If you see the Heart icon: close the tab, clear cache and repeat the steps
+1. Click on "click here" link
+1. Wait for "Heart icon should be here" message to appear
+1. If you see the Heart icon - close incognito window (or close tab and clear cache) and repeat the reproduction steps again
 
 ### Reproduction rate
 
@@ -28,11 +29,31 @@ WIP attempt to create minimal reproducible example for the Edge font cache issue
 - Slowed down PC: 10/20 (50% reproduction rate)
   (Running y-crunch stress tests and, using "Quiet" thermal mode and "Best Power Efficiency" power mode)
 
-The issue was also reproduced on the same Dell laptop when using Chrome 126.0.6478.127 Incognito window; but not in Chromium 84.0.4147.0, and not in Firefox Developer Edition 129.0b9.
+### OS and browser versions
 
-Also reproduced on MacBook Air 2019 (A1932) when using Chrome 127.0.6533.89 Incognito window, but not in Safari 17.5 (19618.2.12.11.6).
+Reproduced on Chrome and Edge, both on Mac and Windows. Doesn't reproduce on Firefox, Safari and for some weird reason on Chromium.
 
-## Steps to reproduce (non-minimal):
+Reproduced:
+
+- Chrome
+  - 126.0.6478.127 (Windows 11 Enterprise 23H2 (22631.3880))
+  - 127.0.6533.73 (Windows 11 Enterprise 23H2 (22631.3880))
+  - 127.0.6533.89 (MacBook Air 2019 (A1932))
+- Edge
+  - 127.0.2651.74 (Windows 11 Enterprise 23H2 (22631.3880))
+
+Not reproduced:
+
+- Chromium
+  - 84.0.4147.0 (Windows 11 Enterprise 23H2 (22631.3880))
+  - 127.0.6533.0 (Windows 11 Enterprise 23H2 (22631.3880))
+  - Some 126.x, 127.x and 129.x versions (Windows 11 Enterprise 23H2 (22631.3880))
+- Firefox Developer Edition
+  - 129.0b9 (Windows 11 Enterprise 23H2 (22631.3880))
+- Safari
+  - 17.5 (19618.2.12.11.6) (MacBook Air 2019 (A1932))
+
+## Steps to reproduce (original, non-minimal):
 
 1. Open https://app.borderwise.com/ and make sure you're logged out
 1. Close all tabs, close Edge
@@ -40,6 +61,8 @@ Also reproduced on MacBook Air 2019 (A1932) when using Chrome 127.0.6533.89 Inco
 1. Go to https://app.borderwise.com/
 1. Login
 1. Sometimes font-awesome icons won't be loaded
+
+---
 
 The issue usually stays when doing soft-reload. Hard reload fixes the issue.
 

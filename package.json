@@ -1,5 +1,5 @@
 {
-  "name": "edge-font-cache-issue",
+  "name": "font-cache-issue",
   "scripts": {
     "start": "node index.js",
     "prepare": "cp -r node_modules/font-awesome static"
