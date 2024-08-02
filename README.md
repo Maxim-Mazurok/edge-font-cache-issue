@@ -2,6 +2,32 @@
 
 WIP attempt to create minimal reproducible example for the Edge font cache issue.
 
+## Steps to reproduce (minimal):
+
+1. `git clone https://github.com/Maxim-Mazurok/edge-font-cache-issue`
+1. `cd edge-font-cache-issue`
+1. `nvm i` (optional, but recommended)
+1. `npm ci`
+1. `npm start`
+1. Open Edge
+1. Go to [edge://settings/clearBrowserData](edge://settings/clearBrowserData)
+1. Select "All time" as the time range
+1. Make sure "Cookies and other site data" and "Cached images and files" are checked
+1. Click "Clear now"
+1. Open new tab
+1. Go to [http://localhost:3005/](http://localhost:3005/)
+1. Wait to be redirected to `/login.html`
+1. Click on "Click here" link
+1. Wait "Click here and close browser" link to appear
+1. If you see the Heart icon: close the tab, clear cache and repeat the steps
+
+### Reproduction rate
+
+- Fast PC: 55/60 (~92% reproduction rate)
+  (Dell Precision 5570 with i9-12900H and 64GB RAM, using "Ultra Performance" thermal mode and "Best performance" power mode)
+- Slowed down PC: 10/20 (50% reproduction rate)
+  (Running y-crunch stress tests and, using "Quiet" thermal mode and "Best Power Efficiency" power mode)
+
 ## Steps to reproduce (non-minimal):
 
 1. Open https://app.borderwise.com/ and make sure you're logged out
@@ -14,11 +40,3 @@ WIP attempt to create minimal reproducible example for the Edge font cache issue
 The issue usually stays when doing soft-reload. Hard reload fixes the issue.
 
 One can see in DevTools when doing soft-reload that the font-awesome CSS is loaded, but the font files are not being requested at all, despite being referenced in the cached CSS.
-
-## Steps to reproduce (minimal, non-working):
-
-1. `git clone` this
-1. `nvm i`
-1. `npm ci`
-1. `npm start`
-1. Follow the prompts (you can use [MacroRecorder](https://www.macrorecorder.com/download/) with [repro file](./Repro-clear-cache.mrf) to automate the steps)
