@@ -10,7 +10,7 @@ Setup:
 1. `cd font-cache-issue`
 1. `nvm i` (optional, but recommended)
 1. `npm ci`
-1. `npm start`
+1. `npm start` (or `DEBUG=* npm start` for verbose server logs)
 
 Reproduction:
 
@@ -54,6 +54,19 @@ Not reproduced:
   - 129.0b9 (Windows 11 Enterprise 23H2 (22631.3880))
 - Safari
   - 17.5 (19618.2.12.11.6) (MacBook Air 2019 (A1932))
+
+### Breakdown
+
+1. We open the main "App" page
+1. After a short delay, we check if user is logged in, and since they are not (based on local storage), we redirect them to the login page
+1. Just before the redirect, we show an icon element that is supposed to request a font file
+1. From server logs we can see that font file is requested and served at this point
+1. Now we are on the login page, and user is automatically logged in (by flipping a flag in the local storage).
+1. User clicks on the "click here" link, navigating back to the main "App" page
+1. After a short delay, we check if user is logged in, and since they are (based on local storage), we show the same icon element as before
+1. This time, the icon is not shown (only a rectangle that looks like White Square U+25A1 `□`), and the font file is not requested at all
+
+My guess is that the browser thinks that file is cached because it already requested it before, but then it wasn't actually saved because of the page navigation, and so it probably thinks that file is cached while it isn't, and doesn't request it again, but also can't render the icon because the file was not actually saved. I think one could verify this by having more detailed server logs, or by inspecting network with WireShark, not sure.
 
 ## Steps to reproduce (original, non-minimal):
 
