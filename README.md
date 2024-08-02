@@ -28,6 +28,10 @@ WIP attempt to create minimal reproducible example for the Edge font cache issue
 - Slowed down PC: 10/20 (50% reproduction rate)
   (Running y-crunch stress tests and, using "Quiet" thermal mode and "Best Power Efficiency" power mode)
 
+The issue was also reproduced on the same Dell laptop when using Chrome 126.0.6478.127 Incognito window; but not in Chromium 84.0.4147.0, and not in Firefox Developer Edition 129.0b9.
+
+Also reproduced on MacBook Air 2019 (A1932) when using Chrome 127.0.6533.89 Incognito window, but not in Safari 17.5 (19618.2.12.11.6).
+
 ## Steps to reproduce (non-minimal):
 
 1. Open https://app.borderwise.com/ and make sure you're logged out
