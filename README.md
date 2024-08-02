@@ -1,4 +1,4 @@
-# Edge Font Cache Issue
+# Font Cache Issue
 
 A minimal reproducible example for the Chrome/Edge font cache issue.
 
