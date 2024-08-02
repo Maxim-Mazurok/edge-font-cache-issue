@@ -18,7 +18,7 @@ WIP attempt to create minimal reproducible example for the Edge font cache issue
 1. Go to [http://localhost:3005/](http://localhost:3005/)
 1. Wait to be redirected to `/login.html`
 1. Click on "Click here" link
-1. Wait "Click here and close browser" link to appear
+1. Wait for "Click here and close browser" link to appear
 1. If you see the Heart icon: close the tab, clear cache and repeat the steps
 
 ### Reproduction rate
