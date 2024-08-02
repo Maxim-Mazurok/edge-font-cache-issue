@@ -38,6 +38,7 @@ Reproduced on Chrome and Edge, both on Mac and Windows. Doesn't reproduce on Fir
 Reproduced:
 
 - Chrome
+  - 109.0.5414.120 (Windows 11 Enterprise 23H2 (22631.3880))
   - 126.0.6478.127 (Windows 11 Enterprise 23H2 (22631.3880))
   - 127.0.6533.73 (Windows 11 Enterprise 23H2 (22631.3880))
   - 127.0.6533.89 (MacBook Air 2019 (A1932))
