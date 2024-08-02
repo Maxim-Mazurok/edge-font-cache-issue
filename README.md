@@ -22,6 +22,8 @@ Reproduction:
 1. Wait for "Heart icon should be here" message to appear
 1. If you see the Heart icon - close incognito window (or close tab and clear cache) and repeat the reproduction steps again
 
+See [demo video](https://github.com/Maxim-Mazurok/font-cache-issue/raw/main/demo.mp4)
+
 ### Reproduction rate
 
 - Fast PC: 55/60 (~92% reproduction rate)
