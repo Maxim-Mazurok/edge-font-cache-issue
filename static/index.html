@@ -19,8 +19,6 @@
       };
 
       setTimeout(() => {
-        document.querySelector("#heart").classList.add("fa", "fa-heart");
-
         if (window.localStorage.getItem("logged-in") !== "true") {
           window.location.href = "/login.html";
         } else {
@@ -31,6 +29,8 @@
   </head>
   <body>
     <h1>Wait for the message to appear below...</h1>
-    <div class="hidden">Heart icon should be here: <i id="heart"></i></div>
+    <div class="hidden">
+      Heart icon should be here: <i class="fa fa-heart"></i>
+    </div>
   </body>
 </html>
