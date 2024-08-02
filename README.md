@@ -42,6 +42,7 @@ Reproduced:
   - 126.0.6478.127 (Windows 11 Enterprise 23H2 (22631.3880))
   - 127.0.6533.73 (Windows 11 Enterprise 23H2 (22631.3880))
   - 127.0.6533.89 (MacBook Air 2019 (A1932))
+  - 127.0.6533.89 (Fresh install of Chrome on Windows 10 Enterprise Evaluation 1809 in Virtualbox)
 - Edge
   - 127.0.2651.74 (Windows 11 Enterprise 23H2 (22631.3880))
 
