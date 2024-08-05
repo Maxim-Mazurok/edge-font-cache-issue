@@ -87,4 +87,4 @@ One can see in DevTools when doing soft-reload that the font-awesome CSS is load
 
 ## Workaround
 
-The workaround is to ask browser not to cache the font file. See [workaround.js](./workaround.js) for example.
+The workaround is to ask browser not to cache the CSS files that references the font file. See [workaround.js](./workaround.js) for example.

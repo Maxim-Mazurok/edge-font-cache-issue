@@ -13,8 +13,8 @@ const port = 3005;
 app.use(
   express.static("static", {
     setHeaders: function (res, path) {
-      if (path.includes("fontawesome-webfont")) {
-        onHeaders(res, unsetCacheHeaders); // NOTE: this is the workaround for the issue - force browser not to cache the fontawesome-webfont files
+      if (path.includes("font-awesome.min.css")) {
+        onHeaders(res, unsetCacheHeaders); // NOTE: this is the workaround for the issue - force browser not to cache the CSS file that references the font files
       }
     },
   })
