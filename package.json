@@ -2,12 +2,10 @@
   "name": "font-cache-issue",
   "scripts": {
     "start": "node index.js",
-    "workaround": "node workaround.js",
-    "prepare": "cp -r node_modules/font-awesome static"
+    "workaround": "node workaround.js"
   },
   "dependencies": {
     "express": "^4.19.2",
-    "font-awesome": "^4.7.0",
     "on-headers": "^1.0.2"
   }
 }

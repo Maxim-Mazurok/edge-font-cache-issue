@@ -8,9 +8,9 @@ Setup:
 
 1. `git clone https://github.com/Maxim-Mazurok/font-cache-issue`
 1. `cd font-cache-issue`
-1. `nvm i` (optional, but recommended)
-1. `npm ci`
-1. `npm start` (or `DEBUG=* npm start` for verbose server logs)
+1. `nvm i` on linux, or `nvs auto` (optional, but recommended, to use the same NodeJS version as me; see [nvm](https://github.com/nvm-sh/nvm) and [nvs](https://github.com/jasongin/nvs))
+1. `npm ci` - ensure it completes without errors
+1. `npm start` (or set env var `DEBUG` to `*` for verbose server logs)
 
 Reproduction:
 
