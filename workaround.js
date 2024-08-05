@@ -1,24 +1,21 @@
 const express = require("express");
-const onHeaders = require("on-headers");
-
-function unsetCacheHeaders() {
-  this.removeHeader("Etag");
-  this.removeHeader("Last-Modified");
-}
-
 const app = express();
 const port = 3005;
 
+// Middleware to set Cache-Control header
+app.use((req, res, next) => {
+  res.setHeader("Cache-Control", "max-age=43200"); // 12 hours in seconds
+  if (req.url.includes("font-awesome.min.css")) {
+    res.setHeader("Cache-Control", "no-store"); // NOTE: this is the workaround - do not let the browser store cached CSS that references font files
+  }
+  next();
+});
+
+// Enable ETag caching (Express enables this by default)
+// app.set("etag", "weak"); // weak because of compression
+
 // Serve static files from the "static" directory
-app.use(
-  express.static("static", {
-    setHeaders: function (res, path) {
-      if (path.includes("font-awesome.min.css")) {
-        onHeaders(res, unsetCacheHeaders); // NOTE: this is the workaround for the issue - force browser not to cache the CSS file that references the font files
-      }
-    },
-  })
-);
+app.use(express.static("static"));
 
 // Start the server and listen on the specified port
 app.listen(port, () => {
