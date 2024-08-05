@@ -84,3 +84,7 @@ My guess is that the browser thinks that file is cached because it already reque
 The issue usually stays when doing soft-reload. Hard reload fixes the issue.
 
 One can see in DevTools when doing soft-reload that the font-awesome CSS is loaded, but the font files are not being requested at all, despite being referenced in the cached CSS.
+
+## Workaround
+
+The workaround is to ask browser not to cache the font file. See [workaround.js](./workaround.js) for example.
